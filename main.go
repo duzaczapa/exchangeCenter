@@ -16,9 +16,8 @@ type Rate struct {
 }
 
 type ExchangeTable struct {
-	Table         string `json:"table"`
-	EffectiveDate string `json:"effectiveDate"`
-	Rates         []Rate `json:"rates"`
+	Table string `json:"table"`
+	Rates []Rate `json:"rates"`
 }
 
 var client = &http.Client{

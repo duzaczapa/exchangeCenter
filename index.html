@@ -6,6 +6,26 @@
     <title>Main page</title>
 </head>
 <body>
-    <h1>Main page</h1>
+    <h1>Exchange rates (Table {{ .Table }})</h1>
+    <p>{{ .EffectiveDate }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Code</th>
+                <th>Rate (PLN)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Rates }}
+            <tr>
+                <td>{{ .Currency }}</td>
+                <td>{{ .Code }}</td>
+                <td>{{ .Mid }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
 </body>
 </html>
